@@ -24,3 +24,7 @@ This project includes resources for a simple regulation tool designed to help fe
 
 ### Main Dashboard
 ![Main Dashboard](images/dashboard.png)
+
+
+### Research workflow 
+![research workflow](images/workflow.png)
