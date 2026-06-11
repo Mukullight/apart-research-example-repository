@@ -23,7 +23,6 @@ Replicating this model would immediately amplify our impact without reinventing 
 Launch a **12‑week, part‑time (10‑15 hrs/week), remote AI Safety Fellowship** that mirrors the Apart Research approach:
 - **Cohort size:** 20‑30 fellows.
 - **Structure:** Weekly seminars, co‑working sessions, 1‑on‑1 mentorship.
-- **Compensation:** Tiered stipend (e.g., $500–$2,000 depending on region and need).
 - **Output:** A research paper or technical report, presented at a final symposium.
 - **Infrastructure:** Lightweight toolset (Zoom, Slack, GitHub, Notion) with minimal custom development.
 
