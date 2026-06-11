@@ -275,6 +275,3 @@ Advanced search:
 - [ ] Search saved or documented for reproducibility.
 
 ---
-
-*No code, no APIs – just a clear, reproducible method to find the literature you need.*  
-*Adaptable to any academic database you encounter.*
