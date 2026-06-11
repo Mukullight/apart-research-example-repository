@@ -43,13 +43,13 @@
 ## Budget Status
 | Category | Budget | Spent to Date | Remaining | % Spent |
 |----------|--------|---------------|-----------|---------|
-| Fellow stipends | $15,000 | | | |
-| Mentor honoraria | $4,000 | | | |
-| Program Lead salary | $18,000 | | | |
-| Tools & compute | $1,500 | | | |
-| Marketing | $1,000 | | | |
-| Contingency | $3,950 | | | |
-| **Total** | **$43,450** | | | |
+| Fellow stipends | a | | | |
+| Mentor honoraria | b | | | |
+| Program Lead salary | c | | | |
+| Tools & compute | d | | | |
+| Marketing | e | | | |
+| Contingency | f | | | |
+| **Total** | **g** | | | |
 
 **Variance explanation:**
 
