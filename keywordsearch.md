@@ -1,6 +1,6 @@
 # Academic Search Algorithm & Query Crafting for Research Databases
 
-A systematic, no-code approach to building precise, high-recall queries across Google Scholar, arXiv, Semantic Scholar, PubMed, CORE, and more.  
+A systematic search approach to building precise, high-recall queries across Google Scholar, arXiv, Semantic Scholar, PubMed, CORE, and more.  
 Use this to replicate your search, adjust scope, and ensure comprehensive literature discovery.
 
 ---
