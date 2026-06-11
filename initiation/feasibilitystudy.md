@@ -25,16 +25,16 @@ This study evaluates the viability of launching a part‑time, remote AI Safety 
 **Conclusion:** Negligible technical complexity.
 
 ## 4. Economic Feasibility
-### Cost Estimates (Pilot Cohort – 15 fellows, 12 weeks)
+
 | Item | Cost (USD) |
 |------|------------|
-| Stipends (tiered, avg $1,000/fellow) | $15,000 |
-| Mentor honoraria ($500 × 8 mentors) | $4,000 |
-| Program Manager (pro‑rata 3 months) | $18,000 |
-| Tools & compute credits | $1,500 |
-| Marketing & outreach | $1,000 |
-| Contingency (10%) | $3,950 |
-| **Total** | **$43,450** |
+| Stipends (tiered, ) |  
+| Mentor honoraria ($500 × 8 mentors) | 
+| Program Manager (pro‑rata 3 months) | 
+| Tools & compute credits | 
+| Marketing & outreach | 
+| Contingency (10%) | 
+| **Total** | 
 
 ### Comparison with Apart Research Model
 Apart Research runs similar cohorts at a cost of ~$30k per program, demonstrating that this is a highly cost‑efficient model. Our estimate is slightly higher due to first‑time setup costs.
