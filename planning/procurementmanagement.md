@@ -22,14 +22,14 @@ This plan details how goods and services will be acquired externally for the pil
 ## 3. Procurement Items & Contract Types
 | Item ID | Description | Est. Value | Contract Type | Source Selection |
 |---------|-------------|------------|---------------|------------------|
-| PROC‑01 | 8 Mentor honoraria contracts | $4,000 | Fixed‑price | Direct invitation based on expertise |
-| PROC‑02 | Freelance graphic designer (assets) | $400 | Fixed‑price (deliverable) | Competitive quotes (2‑3 freelancers via Upwork) |
-| PROC‑03 | Cloud credits (if not in‑kind) | $500 | Purchase order | Direct from provider |
-| PROC‑04 | Software subscriptions (Zoom Pro, Airtable Pro) | $600 | Fixed‑price annual/monthly | Direct online purchase |
+| PROC‑01 | 8 Mentor honoraria contracts | Fixed‑price | Direct invitation based on expertise |
+| PROC‑02 | Freelance graphic designer (assets) | Fixed‑price (deliverable) | Competitive quotes (2‑3 freelancers via Upwork) |
+| PROC‑03 | Cloud credits (if not in‑kind) | Purchase order | Direct from provider |
+| PROC‑04 | Software subscriptions (Zoom Pro, Airtable Pro) | Fixed‑price annual/monthly | Direct online purchase |
 
 ## 4. Procurement Process
 1. **Need identification:** Program Lead flags requirement.  
-2. **Approval:** Sponsor approves any procurement > $200.  
+2. **Approval:** Sponsor approves any procurement > y.  
 3. **Solicitation:** For freelancer, a brief is shared; for mentors, a standard agreement is used.  
 4. **Selection:** Based on qualifications, past work, and cost (where applicable).  
 5. **Contracting:** Signed agreement with deliverables, timeline, and payment terms.  
@@ -53,7 +53,7 @@ This plan details how goods and services will be acquired externally for the pil
 | Program Lead | Overall procurement management, approves small purchases, manages freelancer. |
 | Mentorship Coordinator | Manages mentor contracts and performance. |
 | Finance/Ops | Processes payments, maintains procurement documentation. |
-| Fiscal Sponsor | Reviews contracts > $1,000; ensures compliance. |
+| Fiscal Sponsor | Reviews contracts > s; ensures compliance. |
 
 ---
 
