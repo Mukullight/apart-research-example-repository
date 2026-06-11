@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global AI Regulatory Compliance Framework</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0f1117;
+      --bg2:      #171b27;
+      --bg3:      #1e2333;
+      --border:   #2a3050;
+      --border2:  #3a4470;
+      --text:     #e8ecf8;
+      --muted:    #8a93b8;
+      --dim:      #555e80;
+      --accent:   #4f7fff;
+      --accent2:  #7c5fff;
+      --danger:   #e24b4a;
+      --warning:  #f0a030;
+      --success:  #3cb878;
+      --info:     #4f7fff;
+      --danger-bg:  rgba(226,75,74,0.12);
+      --warning-bg: rgba(240,160,48,0.12);
+      --success-bg: rgba(60,184,120,0.12);
+      --info-bg:    rgba(79,127,255,0.12);
+      --radius:   10px;
+      --radius-lg: 14px;
+      --font: 'Inter', system-ui, sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ── LAYOUT ─────────────────────────────────────── */
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    .hero {
+      padding: 2.5rem 2rem 2rem;
+      background: linear-gradient(135deg, #111827 0%, #1a2140 50%, #111827 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 260px; height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(79,127,255,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, #e8ecf8 30%, #8a93b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 680px;
+      line-height: 1.7;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 1.5rem;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px; color: var(--muted);
+    }
+    .hero-tag i { font-size: 13px; color: var(--accent); }
+
+    /* ── TABS ─────────────────────────────────────────── */
+    .tabs {
+      display: flex; gap: 4px; flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0;
+    }
+    .tab {
+      padding: 8px 16px;
+      border: none; border-bottom: 2px solid transparent;
+      background: transparent;
+      font-family: var(--font); font-size: 13px; font-weight: 500;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color .15s, border-color .15s;
+      border-radius: 6px 6px 0 0;
+      position: relative; bottom: -1px;
+    }
+    .tab:hover { color: var(--text); }
+    .tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+      background: var(--bg2);
+    }
+
+    /* ── PANELS ───────────────────────────────────────── */
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* ── SECTION TITLE ────────────────────────────────── */
+    .section-title {
+      font-size: 13px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--dim);
+      margin: 1.75rem 0 1rem;
+    }
+    .section-title:first-child { margin-top: 0; }
+
+    /* ── GRID ─────────────────────────────────────────── */
+    .grid2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 12px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── CARDS ────────────────────────────────────────── */
+    .card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.25rem;
+    }
+    .card-head {
+      display: flex; align-items: center; gap: 9px;
+      margin-bottom: 10px;
+    }
+    .dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .dot-red    { background: var(--danger); }
+    .dot-amber  { background: var(--warning); }
+    .dot-green  { background: var(--success); }
+    .dot-blue   { background: var(--info); }
+    .region-label { font-size: 13.5px; font-weight: 600; color: var(--text); }
+    .badge {
+      margin-left: auto;
+      font-size: 10.5px; font-weight: 600;
+      padding: 2px 8px; border-radius: 4px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .badge-r { background: var(--danger-bg); color: var(--danger); border: 1px solid rgba(226,75,74,0.25); }
+    .badge-a { background: var(--warning-bg); color: var(--warning); border: 1px solid rgba(240,160,48,0.25); }
+    .badge-g { background: var(--success-bg); color: var(--success); border: 1px solid rgba(60,184,120,0.25); }
+    .badge-b { background: var(--info-bg); color: var(--info); border: 1px solid rgba(79,127,255,0.25); }
+
+    .row {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 8px; padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 12.5px;
+    }
+    .row:last-child { border-bottom: none; padding-bottom: 0; }
+    .row-k { color: var(--muted); flex-shrink: 0; min-width: 130px; }
+    .row-v { color: var(--text); text-align: right; }
+
+    /* ── ACCORDION ────────────────────────────────────── */
+    .accord-sep { border: none; border-top: 1px solid var(--border); margin: 0; }
+    .accord-head {
+      display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer; padding: 13px 0;
+      user-select: none;
+    }
+    .accord-head:hover .accord-label { color: var(--accent); }
+    .accord-label {
+      font-size: 13.5px; font-weight: 500; color: var(--text);
+      transition: color .15s;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .accord-label i { font-size: 16px; }
+    .accord-icon {
+      font-size: 16px; color: var(--dim);
+      transition: transform .2s;
+      flex-shrink: 0;
+    }
+    .accord-icon.open { transform: rotate(180deg); }
+    .accord-body {
+      font-size: 13px; color: var(--muted);
+      line-height: 1.7; padding-bottom: 14px;
+    }
+    .accord-body strong { color: var(--text); font-weight: 500; }
+
+    /* ── STEPS ────────────────────────────────────────── */
+    .steps { display: flex; flex-direction: column; gap: 0; }
+    .step {
+      display: flex; gap: 16px;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .step:last-child { border-bottom: none; }
+    .step-num {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: var(--info-bg);
+      border: 1px solid rgba(79,127,255,0.3);
+      color: var(--accent);
+      font-size: 12px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+      font-family: var(--mono);
+    }
+    .step-title {
+      font-size: 14px; font-weight: 600; color: var(--text);
+      margin-bottom: 5px;
+    }
+    .step-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
+    .step-desc b { color: var(--text); font-weight: 500; }
+
+    /* ── TIMELINE ─────────────────────────────────────── */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+      border-left: 1.5px solid var(--border);
+    }
+    .tl-item { position: relative; padding: 0 0 20px 20px; }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-dot {
+      position: absolute; left: -28px; top: 4px;
+      width: 10px; height: 10px; border-radius: 50%;
+      border: 2px solid var(--border2);
+      background: var(--bg);
+    }
+    .tl-dot.enforced { background: var(--danger); border-color: var(--danger); }
+    .tl-dot.active   { background: var(--warning); border-color: var(--warning); }
+    .tl-dot.upcoming { background: var(--info); border-color: var(--info); }
+    .tl-date { font-size: 11px; color: var(--dim); margin-bottom: 2px; font-family: var(--mono); }
+    .tl-title { font-size: 13.5px; font-weight: 600; color: var(--text); }
+    .tl-body { font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.6; }
+    .tl-critical .tl-title { color: var(--danger); }
+
+    /* ── CHECKLIST ────────────────────────────────────── */
+    .check-card { margin-bottom: 12px; }
+    .check-card .card-head { margin-bottom: 10px; }
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 9px;
+      font-size: 13px; color: var(--muted);
+      padding: 5px 0; line-height: 1.55;
+      border-bottom: 1px solid var(--border);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li i { font-size: 15px; flex-shrink: 0; margin-top: 1px; color: var(--success); }
+    .checklist li.warn i { color: var(--warning); }
+    .checklist li strong { color: var(--text); font-weight: 500; }
+
+    /* ── RISK TABLE ───────────────────────────────────── */
+    .table-wrap { overflow-x: auto; }
+    .risk-table {
+      width: 100%; border-collapse: collapse;
+      font-size: 12.5px; min-width: 620px;
+    }
+    .risk-table th {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.07em;
+      text-transform: uppercase; color: var(--dim);
+      text-align: left; padding: 8px 12px;
+      border-bottom: 1px solid var(--border2);
+      background: var(--bg3);
+    }
+    .risk-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top; color: var(--text);
+    }
+    .risk-table tr:last-child td { border-bottom: none; }
+    .risk-table tr:hover td { background: var(--bg3); }
+    .risk-table td:first-child { font-weight: 500; }
+    .pill {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      padding: 2px 9px; border-radius: 999px;
+      white-space: nowrap;
+    }
+    .pill-r { background: var(--danger-bg); color: var(--danger); border: 1px solid rgba(226,75,74,0.25); }
+    .pill-a { background: var(--warning-bg); color: var(--warning); border: 1px solid rgba(240,160,48,0.25); }
+    .pill-g { background: var(--success-bg); color: var(--success); border: 1px solid rgba(60,184,120,0.25); }
+
+    /* ── FILTER BAR ───────────────────────────────────── */
+    .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+    .filter-btn {
+      padding: 5px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px; font-family: var(--font);
+      font-size: 12.5px; cursor: pointer;
+      background: transparent; color: var(--muted);
+      transition: all .15s;
+    }
+    .filter-btn:hover { background: var(--bg3); color: var(--text); }
+    .filter-btn.active {
+      background: var(--info-bg); color: var(--accent);
+      border-color: rgba(79,127,255,0.4);
+    }
+
+    /* ── FAILURE MODE CARDS ───────────────────────────── */
+    .fail-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--danger);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem;
+    }
+    .fail-card .fail-title {
+      font-size: 13.5px; font-weight: 600; color: var(--text);
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 7px;
+    }
+    .fail-card .fail-title i { color: var(--danger); font-size: 16px; }
+    .fail-card p { font-size: 12.5px; color: var(--muted); line-height: 1.65; }
+
+    /* ── LEGEND ───────────────────────────────────────── */
+    .legend {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      padding: 10px 14px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 1.25rem;
+      font-size: 12px; color: var(--muted);
+      align-items: center;
+    }
+    .legend-item { display: flex; align-items: center; gap: 6px; }
+
+    /* ── SCROLLBAR ───────────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+    @media (max-width: 640px) {
+      .page { padding: 1rem 1rem 3rem; }
+      .hero { padding: 1.5rem 1.25rem; }
+      .grid2 { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">
+      <i class="ti ti-world"></i>
+      Global AI Compliance
+    </div>
+    <h1>Global AI Deployment<br>Regulatory Risk Framework</h1>
+    <p class="hero-sub">A step-by-step protocol for deploying AI services across the EU, US, APAC, and other regions while avoiding regulatory penalties. Current as of June 2026.</p>
+    <div class="hero-meta">
+      <span class="hero-tag"><i class="ti ti-calendar"></i> Updated June 2026</span>
+      <span class="hero-tag"><i class="ti ti-flag"></i> 12 jurisdictions covered</span>
+      <span class="hero-tag"><i class="ti ti-list-check"></i> 12-step protocol</span>
+      <span class="hero-tag"><i class="ti ti-alert-triangle"></i> Aug 2, 2026 EU deadline</span>
+    </div>
+  </div>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab active" onclick="showTab('overview', this)">Overview</button>
+    <button class="tab" onclick="showTab('regions', this)">Region-by-region</button>
+    <button class="tab" onclick="showTab('protocol', this)">12-step protocol</button>
+    <button class="tab" onclick="showTab('timeline', this)">Deadline tracker</button>
+    <button class="tab" onclick="showTab('checklist', this)">Pre-launch checklist</button>
+    <button class="tab" onclick="showTab('risks', this)">Risk matrix</button>
+  </div>
+
+  <!-- ── OVERVIEW ──────────────────────────────────────────── -->
+  <div id="panel-overview" class="panel active">
+
+    <div class="section-title">The three unavoidable truths of cross-border AI compliance</div>
+
+    <div class="accord-sep"></div>
+
+    <div onclick="toggleAccord(0)">
+      <div class="accord-head">
+        <span class="accord-label"><i class="ti ti-alert-triangle" style="color:var(--warning)"></i>1. No single framework covers every jurisdiction</span>
+        <i id="icon-0" class="ti ti-chevron-down accord-icon open"></i>
+      </div>
+      <div id="body-0" class="accord-body">
+        The EU AI Act, US federal guidance (NIST AI RMF), state laws (CCPA, Texas TRAIGA, Colorado), China PIPL + AI Measures, Japan APPI + AI Act 2025, South Korea AI Basic Act (Jan 2026), India DPDPA, Singapore IMDA — each has distinct scope, obligations, and penalties. A "one compliance policy" approach guarantees gaps. You need a <strong>jurisdiction matrix</strong> mapping every region where data subjects reside or services are offered against applicable law.
+      </div>
+    </div>
+    <div class="accord-sep"></div>
+
+    <div onclick="toggleAccord(1)">
+      <div class="accord-head">
+        <span class="accord-label"><i class="ti ti-database" style="color:var(--danger)"></i>2. Every API call is a potential cross-border data transfer</span>
+        <i id="icon-1" class="ti ti-chevron-down accord-icon"></i>
+      </div>
+      <div id="body-1" class="accord-body" style="display:none">
+        Under GDPR Articles 28 and 46, routing EU resident data through a US-hosted AI API creates a cross-border transfer requiring either Standard Contractual Clauses (SCCs), Binding Corporate Rules (BCRs), or an adequacy decision. China's PIPL requires separate consent for data leaving China. India's DPDPA mandates data localisation for certain categories. The €1.2 billion Meta fine was not for a breach — it was for routine data transfers deemed non-compliant. Build <strong>regional inference endpoints</strong> and data residency by design, not as an afterthought.
+      </div>
+    </div>
+    <div class="accord-sep"></div>
+
+    <div onclick="toggleAccord(2)">
+      <div class="accord-head">
+        <span class="accord-label"><i class="ti ti-layers-intersect" style="color:var(--danger)"></i>3. Risk tier determines your compliance burden</span>
+        <i id="icon-2" class="ti ti-chevron-down accord-icon"></i>
+      </div>
+      <div id="body-2" class="accord-body" style="display:none">
+        The EU AI Act classifies systems as Unacceptable Risk (banned), High Risk (Annex I/III — healthcare, employment, critical infrastructure, law enforcement), Limited Risk (chatbots, deep fakes), and Minimal Risk. High-risk systems face conformity assessments, technical documentation, human oversight, and registration in the EU database. Most APAC regimes follow a similar tiering. <strong>Misclassifying your system as minimal risk when it meets high-risk criteria is the most common and most expensive compliance failure.</strong>
+      </div>
+    </div>
+    <div class="accord-sep"></div>
+
+    <div class="section-title" style="margin-top:2rem">Penalty exposure at a glance</div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-head"><div class="dot dot-red"></div><span class="region-label">EU AI Act</span><span class="badge badge-r">ENFORCING NOW</span></div>
+        <div class="row"><span class="row-k">Max penalty</span><span class="row-v">€35M or 7% global turnover</span></div>
+        <div class="row"><span class="row-k">High-risk deadline</span><span class="row-v">Aug 2, 2026</span></div>
+        <div class="row"><span class="row-k">GPAI models</span><span class="row-v">In force Aug 2025</span></div>
+        <div class="row"><span class="row-k">Data governance</span><span class="row-v">Required Aug 2026</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="dot dot-red"></div><span class="region-label">EU GDPR</span><span class="badge badge-a">ACTIVE</span></div>
+        <div class="row"><span class="row-k">Max penalty</span><span class="row-v">€20M or 4% global turnover</span></div>
+        <div class="row"><span class="row-k">AI inference calls</span><span class="row-v">Need DPA + SCCs</span></div>
+        <div class="row"><span class="row-k">DPIA required?</span><span class="row-v">Yes for high-risk AI</span></div>
+        <div class="row"><span class="row-k">US transfers</span><span class="row-v">EU-US DPF (fragile)</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="dot dot-amber"></div><span class="region-label">United States</span><span class="badge badge-a">STATE PATCHWORK</span></div>
+        <div class="row"><span class="row-k">Federal AI law</span><span class="row-v">None (NIST voluntary)</span></div>
+        <div class="row"><span class="row-k">State laws</span><span class="row-v">20+ active privacy laws</span></div>
+        <div class="row"><span class="row-k">California CCPA</span><span class="row-v">ADMT opt-out required</span></div>
+        <div class="row"><span class="row-k">FTC enforcement</span><span class="row-v">Op. AI Comply active</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="dot dot-red"></div><span class="region-label">China</span><span class="badge badge-r">STRICTLY ENFORCED</span></div>
+        <div class="row"><span class="row-k">Key laws</span><span class="row-v">PIPL + AI Measures + CSL</span></div>
+        <div class="row"><span class="row-k">GenAI services</span><span class="row-v">Must register with CAC</span></div>
+        <div class="row"><span class="row-k">Data localisation</span><span class="row-v">Strict — local servers required</span></div>
+        <div class="row"><span class="row-k">Content moderation</span><span class="row-v">Mandatory labelling</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="dot dot-blue"></div><span class="region-label">Japan</span><span class="badge badge-b">NEW LAW 2025</span></div>
+        <div class="row"><span class="row-k">AI Act (May 2025)</span><span class="row-v">Transparency + risk assessment</span></div>
+        <div class="row"><span class="row-k">APPI amendment</span><span class="row-v">Cabinet approved Apr 2026</span></div>
+        <div class="row"><span class="row-k">Penalties</span><span class="row-v">Via APPI/sector law breach</span></div>
+        <div class="row"><span class="row-k">Approach</span><span class="row-v">Innovation-friendly, voluntary</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="dot dot-blue"></div><span class="region-label">South Korea</span><span class="badge badge-b">IN FORCE JAN 2026</span></div>
+        <div class="row"><span class="row-k">AI Basic Act</span><span class="row-v">World's 2nd comprehensive AI law</span></div>
+        <div class="row"><span class="row-k">High-impact AI</span><span class="row-v">Disclosure + human oversight</span></div>
+        <div class="row"><span class="row-k">Local rep</span><span class="row-v">Required</span></div>
+        <div class="row"><span class="row-k">Risk audits</span><span class="row-v">Required + documented</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="dot dot-amber"></div><span class="region-label">India</span><span class="badge badge-a">PHASED 2025–27</span></div>
+        <div class="row"><span class="row-k">DPDPA</span><span class="row-v">Enforcement started 2025</span></div>
+        <div class="row"><span class="row-k">AI-specific law</span><span class="row-v">None yet — DPDPA covers AI</span></div>
+        <div class="row"><span class="row-k">Data fiduciaries</span><span class="row-v">Consent + localisation rules</span></div>
+        <div class="row"><span class="row-k">Cross-border</span><span class="row-v">Government approval needed</span></div>
+      </div>
+      <div class="card">
+        <div class="card-head"><div class="dot dot-green"></div><span class="region-label">Singapore / UK / Canada</span><span class="badge badge-g">LIGHTER TOUCH</span></div>
+        <div class="row"><span class="row-k">Singapore</span><span class="row-v">IMDA guidance + AI Verify toolkit</span></div>
+        <div class="row"><span class="row-k">UK</span><span class="row-v">Sector-led + AI & Digital Hub</span></div>
+        <div class="row"><span class="row-k">Canada</span><span class="row-v">AIDA dead — PIPEDA applies</span></div>
+        <div class="row"><span class="row-k">Gulf (UAE/Qatar)</span><span class="row-v">Financial AI rules + CBUAE 2026</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── REGIONS ──────────────────────────────────────────── -->
+  <div id="panel-regions" class="panel">
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterRegion('all', this)">All regions</button>
+      <button class="filter-btn" onclick="filterRegion('eu', this)">EU / UK</button>
+      <button class="filter-btn" onclick="filterRegion('us', this)">United States</button>
+      <button class="filter-btn" onclick="filterRegion('apac', this)">Asia-Pacific</button>
+      <button class="filter-btn" onclick="filterRegion('other', this)">Rest of world</button>
+    </div>
+
+    <div id="regions-grid" class="grid2">
+      <div class="card" data-region="eu">
+        <div class="card-head"><div class="dot dot-red"></div><span class="region-label">EU — AI Act</span><span class="badge badge-r">CRITICAL</span></div>
+        <div class="row"><span class="row-k">Risk tiers</span><span class="row-v">Unacceptable / High / Limited / Minimal</span></div>
+        <div class="row"><span class="row-k">High-risk sectors</span><span class="row-v">Health, employment, critical infra, biometrics, law enforcement</span></div>
+        <div class="row"><span class="row-k">GPAI obligations</span><span class="row-v">Technical docs, transparency, copyright policy</span></div>
+        <div class="row"><span class="row-k">Conformity assessment</span><span class="row-v">Third-party for Annex I high-risk</span></div>
+        <div class="row"><span class="row-k">EU representative</span><span class="row-v">Required for non-EU providers</span></div>
+        <div class="row"><span class="row-k">AI literacy</span><span class="row-v">Staff training required Feb 2025</span></div>
+        <div class="row"><span class="row-k">Upcoming</span><span class="row-v">AI content labelling guidance (Jun 2026)</span></div>
+      </div>
+      <div class="card" data-region="eu">
+        <div class="card-head"><div class="dot dot-red"></div><span class="region-label">EU — GDPR + Data</span><span class="badge badge-r">ACTIVE</span></div>
+        <div class="row"><span class="row-k">Art. 28</span><span class="row-v">DPA required with every AI API provider</span></div>
+        <div class="row"><span class="row-k">Art. 46</span><span class="row-v">SCCs or BCRs for US-hosted inference</span></div>
+        <div class="row"><span class="row-k">DPIA</span><span class="row-v">Mandatory for high-risk AI processing</span></div>
+        <div class="row"><span class="row-k">EU-US DPF</span><span class="row-v">Fragile — "Schrems III" challenge likely</span></div>
+        <div class="row"><span class="row-k">Digital Omnibus</span><span class="row-v">Nov 2025 — simplification proposed</span></div>
+        <div class="row"><span class="row-k">Records (Art. 30)</span><span class="row-v">Full data processing inventory for AI</span></div>
+        <div class="row"><span class="row-k">Penalty</span><span class="row-v">Up to 4% global turnover</span></div>
+      </div>
+      <div class="card" data-region="eu">
+        <div class="card-head"><div class="dot dot-amber"></div><span class="region-label">United Kingdom</span><span class="badge badge-a">SECTOR-LED</span></div>
+        <div class="row"><span class="row-k">Framework</span><span class="row-v">Sector regulators apply existing law to AI</span></div>
+        <div class="row"><span class="row-k">AI & Digital Hub</span><span class="row-v">Multi-regulator advisory (launching 2026)</span></div>
+        <div class="row"><span class="row-k">AI Reg Bill</span><span class="row-v">Reintroduced House of Lords Mar 2025</span></div>
+        <div class="row"><span class="row-k">Data protection</span><span class="row-v">UK GDPR (post-Brexit) still applies</span></div>
+        <div class="row"><span class="row-k">ICO guidance</span><span class="row-v">AI auditing framework active</span></div>
+        <div class="row"><span class="row-k">Risk level</span><span class="row-v">Lower than EU but evolving fast</span></div>
+      </div>
+      <div class="card" data-region="us">
+        <div class="card-head"><div class="dot dot-amber"></div><span class="region-label">United States — Federal</span><span class="badge badge-a">FRAGMENTED</span></div>
+        <div class="row"><span class="row-k">Federal AI law</span><span class="row-v">None — NIST AI RMF voluntary</span></div>
+        <div class="row"><span class="row-k">FTC</span><span class="row-v">Operation AI Comply — deceptive AI practices</span></div>
+        <div class="row"><span class="row-k">Trump EO</span><span class="row-v">Dec 2025 — blocks incompatible state laws</span></div>
+        <div class="row"><span class="row-k">Counter-bill</span><span class="row-v">Introduced to block the EO block (pending)</span></div>
+        <div class="row"><span class="row-k">Sector rules</span><span class="row-v">HIPAA (health), FCRA (credit), EEOC (hiring)</span></div>
+        <div class="row"><span class="row-k">Approach</span><span class="row-v">Minimally burdensome innovation policy</span></div>
+      </div>
+      <div class="card" data-region="us">
+        <div class="card-head"><div class="dot dot-amber"></div><span class="region-label">US — State Laws</span><span class="badge badge-a">20+ ACTIVE</span></div>
+        <div class="row"><span class="row-k">California CCPA</span><span class="row-v">ADMT opt-out, privacy risk assessments</span></div>
+        <div class="row"><span class="row-k">Colorado</span><span class="row-v">AI Act (Feb 2026) — consequential decisions</span></div>
+        <div class="row"><span class="row-k">Texas TRAIGA</span><span class="row-v">AI governance transparency obligations</span></div>
+        <div class="row"><span class="row-k">Illinois</span><span class="row-v">AI hiring discrimination ban (Jan 2026)</span></div>
+        <div class="row"><span class="row-k">NYC Local 144</span><span class="row-v">Bias audits for AI hiring tools — enforced</span></div>
+        <div class="row"><span class="row-k">Virginia, CT, etc.</span><span class="row-v">15+ additional comprehensive privacy laws</span></div>
+      </div>
+      <div class="card" data-region="apac">
+        <div class="card-head"><div class="dot dot-red"></div><span class="region-label">China</span><span class="badge badge-r">STRICTLY ENFORCED</span></div>
+        <div class="row"><span class="row-k">GenAI Measures</span><span class="row-v">In force Aug 2023 — CAC registration required</span></div>
+        <div class="row"><span class="row-k">PIPL</span><span class="row-v">Consent + cross-border transfer approval</span></div>
+        <div class="row"><span class="row-k">Algorithm rules</span><span class="row-v">Disclose recommendation use + opt-out</span></div>
+        <div class="row"><span class="row-k">Deepfake rules</span><span class="row-v">Mandatory labelling of synthetic content</span></div>
+        <div class="row"><span class="row-k">Data localisation</span><span class="row-v">Personal + "important" data stays in China</span></div>
+        <div class="row"><span class="row-k">Content moderation</span><span class="row-v">No illegal/harmful AI outputs — enforced</span></div>
+        <div class="row"><span class="row-k">Practical note</span><span class="row-v">Separate China deployment stack recommended</span></div>
+      </div>
+      <div class="card" data-region="apac">
+        <div class="card-head"><div class="dot dot-blue"></div><span class="region-label">Japan</span><span class="badge badge-b">NEW LAW 2025</span></div>
+        <div class="row"><span class="row-k">AI Act (May 2025)</span><span class="row-v">Transparency + risk assessment duties</span></div>
+        <div class="row"><span class="row-k">APPI amendment</span><span class="row-v">Cabinet approved Apr 2026 — DPIA required</span></div>
+        <div class="row"><span class="row-k">METI/MIC guidelines</span><span class="row-v">Risk assessment + bias testing documentation</span></div>
+        <div class="row"><span class="row-k">Penalties</span><span class="row-v">Triggered via APPI/copyright/consumer law</span></div>
+        <div class="row"><span class="row-k">Approach</span><span class="row-v">Innovation-first — likely stricter by 2027</span></div>
+      </div>
+      <div class="card" data-region="apac">
+        <div class="card-head"><div class="dot dot-blue"></div><span class="region-label">South Korea</span><span class="badge badge-b">IN FORCE JAN 2026</span></div>
+        <div class="row"><span class="row-k">AI Basic Act</span><span class="row-v">World's 2nd comprehensive national AI law</span></div>
+        <div class="row"><span class="row-k">High-impact AI</span><span class="row-v">Health, education, finance, employment</span></div>
+        <div class="row"><span class="row-k">Obligations</span><span class="row-v">Disclosure + human oversight + intervention</span></div>
+        <div class="row"><span class="row-k">AI-generated content</span><span class="row-v">User notification mandatory</span></div>
+        <div class="row"><span class="row-k">Local representative</span><span class="row-v">Required for non-Korean operators</span></div>
+        <div class="row"><span class="row-k">Risk documentation</span><span class="row-v">Full audit trail required</span></div>
+      </div>
+      <div class="card" data-region="apac">
+        <div class="card-head"><div class="dot dot-amber"></div><span class="region-label">India</span><span class="badge badge-a">ENFORCEMENT STARTED</span></div>
+        <div class="row"><span class="row-k">DPDPA</span><span class="row-v">Phased enforcement 2025–2027</span></div>
+        <div class="row"><span class="row-k">Consent</span><span class="row-v">Granular consent for each AI processing purpose</span></div>
+        <div class="row"><span class="row-k">Data fiduciaries</span><span class="row-v">"Significant" fiduciaries face strict rules</span></div>
+        <div class="row"><span class="row-k">Cross-border</span><span class="row-v">Allowed except to government-blocked countries</span></div>
+        <div class="row"><span class="row-k">Deepfakes framework</span><span class="row-v">Active Feb 2026</span></div>
+        <div class="row"><span class="row-k">AI-specific law</span><span class="row-v">Pending — DPDPA governs for now</span></div>
+      </div>
+      <div class="card" data-region="apac">
+        <div class="card-head"><div class="dot dot-green"></div><span class="region-label">Singapore</span><span class="badge badge-g">PROGRESSIVE</span></div>
+        <div class="row"><span class="row-k">IMDA / PDPC</span><span class="row-v">AI Verify toolkit + Model AI Governance Framework</span></div>
+        <div class="row"><span class="row-k">PDPA</span><span class="row-v">Consent + data protection impact assessment</span></div>
+        <div class="row"><span class="row-k">AI Verify</span><span class="row-v">Run toolkit — strong regulatory goodwill signal</span></div>
+        <div class="row"><span class="row-k">Approach</span><span class="row-v">Innovation hub — pragmatic enforcement</span></div>
+      </div>
+      <div class="card" data-region="other">
+        <div class="card-head"><div class="dot dot-amber"></div><span class="region-label">Gulf / Middle East</span><span class="badge badge-a">SECTOR-SPECIFIC</span></div>
+        <div class="row"><span class="row-k">UAE CBUAE</span><span class="row-v">AI/ML guidance Feb 2026 for financial AI</span></div>
+        <div class="row"><span class="row-k">Qatar QCB</span><span class="row-v">AI guidelines mandatory since Sep 2024</span></div>
+        <div class="row"><span class="row-k">Bahrain</span><span class="row-v">38-article AI law approved Apr 2024 (reviewing)</span></div>
+        <div class="row"><span class="row-k">Key requirements</span><span class="row-v">Board accountability, bias testing, kill-switch</span></div>
+      </div>
+      <div class="card" data-region="other">
+        <div class="card-head"><div class="dot dot-green"></div><span class="region-label">Brazil / Canada / Australia</span><span class="badge badge-g">LIGHT TOUCH (NOW)</span></div>
+        <div class="row"><span class="row-k">Brazil</span><span class="row-v">PL 2338 stalled — LGPD applies to AI</span></div>
+        <div class="row"><span class="row-k">Canada</span><span class="row-v">AIDA dead (Jan 2025) — PIPEDA + provincial laws</span></div>
+        <div class="row"><span class="row-k">Australia</span><span class="row-v">Voluntary AI Ethics Principles + Privacy Act</span></div>
+        <div class="row"><span class="row-k">Risk trajectory</span><span class="row-v">All three expected to tighten by 2027</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PROTOCOL ──────────────────────────────────────────── -->
+  <div id="panel-protocol" class="panel">
+    <div class="section-title">Pre-deployment protocol — 12 steps</div>
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title">Classify your AI system by risk tier in every target jurisdiction</div>
+          <div class="step-desc">Before anything else, run your system against the EU AI Act Annexes I and III, South Korea's high-impact AI definition, and sector rules in each market. <b>Misclassification is the #1 compliance failure.</b> Document: what the system does, what data it processes, what decisions it influences, and who is affected. A recruiting tool, a credit scorer, or any system influencing "consequential decisions" about individuals is high-risk almost everywhere.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">Map data subjects to jurisdictions — build your jurisdiction matrix</div>
+          <div class="step-desc">Every region where a user resides triggers that region's law, regardless of where your servers are. EU residents → GDPR + EU AI Act. Chinese users → PIPL + AI Measures. Indian users → DPDPA. <b>Build a live matrix:</b> rows = jurisdictions, columns = applicable laws, data types, retention rules, cross-border transfer mechanisms required, consent model. Update it quarterly — this landscape is moving fast.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">Design regional inference architecture — data residency by default</div>
+          <div class="step-desc">Don't route EU resident data through US inference endpoints without SCCs and a signed DPA with your AI provider. For China, deploy a completely separate stack on domestic infrastructure — PIPL + Cybersecurity Law make cross-border model inference legally hazardous. For India, determine which data categories require localisation. Use <b>region-pinned inference</b>: each API call stays within the user's regulatory zone unless you have a valid legal transfer mechanism documented.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-title">Conduct Data Protection Impact Assessments (DPIAs) before launch</div>
+          <div class="step-desc">Required under GDPR Art. 35 for high-risk processing, EU AI Act for high-risk systems, Japan APPI (amended 2026), India DPDPA for significant data fiduciaries, and South Korea AI Basic Act. <b>A DPIA documents:</b> the purpose and necessity of the processing, risks to individuals, and mitigations. For EU, the DPIA must happen before processing begins. Keep it in your compliance file — regulators can request it at any time.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">05</div>
+        <div>
+          <div class="step-title">Establish Data Processing Agreements with every AI vendor and API provider</div>
+          <div class="step-desc">GDPR Art. 28 requires a DPA with every processor you use — including LLM API providers. Many legacy DPAs predate generative AI and don't cover training data or inference residency. <b>Check specifically:</b> does your DPA with your AI provider cover the data types you're sending? Does it address whether your data is used for model training? Does it specify inference region? Cross-border clauses must include valid SCCs for EU→US transfers.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">06</div>
+        <div>
+          <div class="step-title">Appoint local representatives in key jurisdictions</div>
+          <div class="step-desc">Required by: EU AI Act (non-EU providers of high-risk AI), GDPR Art. 27 (non-EU controllers), South Korea AI Basic Act (non-Korean operators), China (local entity or licensed partner required for consumer-facing GenAI). The EU AI Act representative must be empowered to <b>hold technical documentation, verify conformity, and retain records for 10 years.</b> This is not just a mailbox — they must be able to cooperate with national authorities.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">07</div>
+        <div>
+          <div class="step-title">Build transparency and disclosure into the user interface</div>
+          <div class="step-desc">EU AI Act Art. 50 (fully effective Aug 2026): disclose when users interact with AI systems. China: mandatory watermarking or metadata tagging of AI-generated content. South Korea: notify users of AI-generated content. CCPA: disclose automated decision-making and provide opt-out for profiling. <b>Minimum UI requirements:</b> clear AI disclosure labels, opt-out mechanism for personalisation/profiling, explainability on consequential decisions.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">08</div>
+        <div>
+          <div class="step-title">Implement human oversight mechanisms for high-risk functions</div>
+          <div class="step-desc">The EU AI Act mandates meaningful human oversight for high-risk AI — not a rubber-stamp button, but a system where a human can <b>understand, monitor, intervene, and override.</b> South Korea AI Basic Act and UAE CBUAE also require human intervention rights. For hiring, credit, and healthcare AI: log every decision, surface the AI's reasoning to the human reviewer, and make override controls prominent. Audit trails must be retained (EU: 10 years for high-risk systems).</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">09</div>
+        <div>
+          <div class="step-title">Conduct bias testing and document data governance practices</div>
+          <div class="step-desc">EU AI Act (Aug 2026): high-risk AI requires documented data governance, bias detection, and correction for training/test/validation datasets. California CCPA: privacy risk assessments for ADMT now cover AI training data. UAE CBUAE: annual bias testing for financial AI. Illinois/NYC: discriminatory AI hiring tools face enforcement. <b>Minimum standard:</b> demographic parity analysis across protected groups, documented dataset provenance, version-controlled training data, bias audit report signed off annually.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">10</div>
+        <div>
+          <div class="step-title">Register high-risk AI systems in relevant public databases</div>
+          <div class="step-desc">EU AI Act Art. 49 requires registration of high-risk AI systems in the EU database before market placement. China requires CAC registration for consumer-facing GenAI services. South Korea's AI Basic Act requires registration of high-impact systems. Singapore's AI Verify toolkit produces a report that serves as de facto registration with regulators. <b>Don't wait</b> — registration is a precondition for lawful deployment, not a post-launch obligation.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">11</div>
+        <div>
+          <div class="step-title">Establish incident response and post-market monitoring procedures</div>
+          <div class="step-desc">EU AI Act: serious incidents involving high-risk AI must be reported to market surveillance authorities. GDPR: personal data breaches reported within 72 hours. UAE CBUAE: kill-switch requirements — you must be able to halt AI operations. Build a <b>post-market monitoring system:</b> track accuracy drift, bias drift, unexpected outputs, security incidents. Log everything. Define escalation paths. Regulators across all jurisdictions now expect documented response procedures.</div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step-num">12</div>
+        <div>
+          <div class="step-title">Implement AI literacy training and maintain compliance documentation</div>
+          <div class="step-desc">EU AI Act Art. 4: AI literacy requirements became enforceable February 2025. All staff using or overseeing AI systems must have sufficient understanding of AI capabilities, limitations, and risks. Maintain: technical documentation per jurisdiction, DPIAs, DPAs, conformity assessments, bias audit reports, incident logs, data processing records (GDPR Art. 30). <b>Set a quarterly review cycle</b> — 6 new national AI laws passed in the last 18 months. Your compliance documentation will be out of date by year-end without active maintenance.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── TIMELINE ──────────────────────────────────────────── -->
+  <div id="panel-timeline" class="panel">
+    <div class="section-title">Enforcement timeline — key dates</div>
+
+    <div class="legend">
+      <span class="legend-item"><span class="tl-dot enforced" style="position:static;width:10px;height:10px;display:inline-block;border-radius:50%;background:var(--danger)"></span> Enforced / in effect</span>
+      <span class="legend-item"><span class="tl-dot" style="position:static;width:10px;height:10px;display:inline-block;border-radius:50%;background:var(--warning)"></span> Active / imminent</span>
+      <span class="legend-item"><span class="tl-dot" style="position:static;width:10px;height:10px;display:inline-block;border-radius:50%;background:var(--info)"></span> Upcoming deadline</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot enforced"></div>
+        <div class="tl-date">August 2023</div>
+        <div class="tl-title">China GenAI Measures in force</div>
+        <div class="tl-body">CAC registration + content labelling + moderation obligations for all public-facing GenAI services, including foreign providers.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot enforced"></div>
+        <div class="tl-date">August 2024</div>
+        <div class="tl-title">EU AI Act enters into force</div>
+        <div class="tl-body">Official publication in EU Official Journal. 20-day countdown begins.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot enforced"></div>
+        <div class="tl-date">February 2, 2025</div>
+        <div class="tl-title">EU AI Act — Prohibited AI bans enforceable</div>
+        <div class="tl-body">Bans on social scoring, real-time biometric surveillance, and other unacceptable-risk systems take effect. AI literacy requirements begin.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot enforced"></div>
+        <div class="tl-date">Mid-2025</div>
+        <div class="tl-title">India DPDPA enforcement begins</div>
+        <div class="tl-body">Phased enforcement of India's Digital Personal Data Protection Act. Consent rules and data fiduciary obligations activate.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot enforced"></div>
+        <div class="tl-date">May 28, 2025</div>
+        <div class="tl-title">Japan AI Act enacted</div>
+        <div class="tl-body">Japan's first dedicated AI law — transparency and risk-assessment duties on developers and deployers.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot enforced"></div>
+        <div class="tl-date">August 2, 2025</div>
+        <div class="tl-title">EU AI Act — GPAI model obligations</div>
+        <div class="tl-body">Rules for General-Purpose AI models apply: technical documentation, transparency, copyright policy, Code of Practice compliance.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot enforced"></div>
+        <div class="tl-date">January 2026</div>
+        <div class="tl-title">South Korea AI Basic Act in force</div>
+        <div class="tl-body">World's second comprehensive national AI law. High-impact AI disclosure, human oversight, local representative requirements active.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot enforced"></div>
+        <div class="tl-date">January 2026</div>
+        <div class="tl-title">Illinois AI hiring discrimination ban</div>
+        <div class="tl-body">Prohibits discriminatory AI use in Illinois hiring decisions.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot enforced"></div>
+        <div class="tl-date">February 2026</div>
+        <div class="tl-title">UAE CBUAE AI/ML guidance (financial AI)</div>
+        <div class="tl-body">Board accountability, model inventory, annual bias testing, kill-switch, consumer opt-out, and human review rights for all UAE licensed financial institutions.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot enforced"></div>
+        <div class="tl-date">February 2026</div>
+        <div class="tl-title">Colorado AI Act in force</div>
+        <div class="tl-body">Consequential AI decision obligations — Colorado becomes second US state with comprehensive AI-specific obligations.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot enforced"></div>
+        <div class="tl-date">April 7, 2026</div>
+        <div class="tl-title">Japan APPI amendment — Cabinet approved</div>
+        <div class="tl-body">Strengthened administrative penalties; DPIA requirements; AI-specific enforcement coordination across ministries.</div>
+      </div>
+      <div class="tl-item tl-critical">
+        <div class="tl-dot active"></div>
+        <div class="tl-date">June 2026 (expected)</div>
+        <div class="tl-title">EU Code of Practice — AI-generated content labelling</div>
+        <div class="tl-body">European Commission guidance on marking and labelling AI-generated content expected this month.</div>
+      </div>
+      <div class="tl-item tl-critical">
+        <div class="tl-dot upcoming"></div>
+        <div class="tl-date">August 2, 2026 — CRITICAL DEADLINE</div>
+        <div class="tl-title" style="color:var(--danger)">EU AI Act — High-Risk Systems Deadline</div>
+        <div class="tl-body">Full compliance required for high-risk AI systems. Transparency obligations (Art. 50) fully effective. Technical documentation, conformity assessments, EU database registration all required. Penalty: up to €35M or 7% global turnover.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot upcoming"></div>
+        <div class="tl-date">2026–2027</div>
+        <div class="tl-title">India DPDPA — full implementation</div>
+        <div class="tl-body">Additional implementing rules for AI systems expected. Significant data fiduciary obligations expand. Deepfakes framework (Feb 2026) already active.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot upcoming"></div>
+        <div class="tl-date">August 2027</div>
+        <div class="tl-title">EU AI Act — Article 6(1) high-risk annex</div>
+        <div class="tl-body">Final tranche of EU AI Act high-risk obligations covering product safety-linked AI systems.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CHECKLIST ──────────────────────────────────────────── -->
+  <div id="panel-checklist" class="panel">
+    <div class="section-title">Pre-launch compliance checklist</div>
+
+    <div class="card check-card">
+      <div class="card-head"><i class="ti ti-shield-check" style="font-size:17px;color:var(--accent)"></i><span class="region-label">Legal &amp; governance foundations</span></div>
+      <ul class="checklist">
+        <li><i class="ti ti-circle-check"></i><span><strong>Risk classification completed</strong> — system assessed against EU AI Act Annexes I/III, South Korea high-impact AI criteria, and sector-specific rules in each target market</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Jurisdiction matrix built</strong> — live document mapping all regions where data subjects reside to applicable laws, consent models, and transfer mechanisms</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Local representatives appointed</strong> — EU AI Act representative, GDPR Art. 27 representative, South Korea local rep (if high-impact AI), China local entity or licensed partner</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>DPIAs completed and filed</strong> — for EU, Japan, India, and South Korea high-risk processing before launch</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>AI literacy training delivered</strong> — all staff using or supervising AI have completed documented training (EU AI Act Art. 4)</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Internal AI governance policy published</strong> — covers roles and responsibilities, review/approval workflow, escalation paths</span></li>
+      </ul>
+    </div>
+
+    <div class="card check-card">
+      <div class="card-head"><i class="ti ti-database" style="font-size:17px;color:var(--accent)"></i><span class="region-label">Data architecture &amp; transfers</span></div>
+      <ul class="checklist">
+        <li><i class="ti ti-circle-check"></i><span><strong>Regional inference endpoints configured</strong> — EU data stays in EU-hosted inference, China data on domestic infrastructure, US data processed within compliant US infrastructure</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>DPAs signed with every AI API provider</strong> — includes inference residency clause, training data clause, and SCCs for cross-border transfers</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>GDPR Art. 30 records of processing</strong> — full inventory of AI data flows including training data, inference inputs, logging, and data retention</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Cross-border transfer mechanisms documented</strong> — SCCs for EU→US, PIPL CAC approval for China exports, DPDPA compliance for India cross-border</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Data minimisation verified</strong> — AI systems process only the minimum data necessary for the stated purpose in each jurisdiction</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Retention policies configured</strong> — automated deletion schedules aligned to jurisdiction-specific limits; EU high-risk AI audit logs retained 10 years</span></li>
+      </ul>
+    </div>
+
+    <div class="card check-card">
+      <div class="card-head"><i class="ti ti-eye" style="font-size:17px;color:var(--accent)"></i><span class="region-label">Transparency &amp; user rights</span></div>
+      <ul class="checklist">
+        <li><i class="ti ti-circle-check"></i><span><strong>AI disclosure labels in UI</strong> — clear disclosure that users are interacting with AI (required EU Aug 2026, South Korea, China)</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>AI-generated content labelling</strong> — watermarking or metadata tags on synthetic content (China mandatory now, EU Code of Practice Jun 2026)</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>ADMT opt-out mechanism</strong> — users can opt out of automated decision-making for personalisation/profiling (CCPA, GDPR Art. 22)</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Explainability on request</strong> — system can surface reasoning behind consequential AI decisions to affected individuals</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Subject access request process</strong> — can fulfil deletion, portability, and correction requests within jurisdiction-specific timeframes</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Algorithm recommendation disclosure</strong> — inform users when personalisation algorithms are in use (China mandatory)</span></li>
+      </ul>
+    </div>
+
+    <div class="card check-card">
+      <div class="card-head"><i class="ti ti-user-check" style="font-size:17px;color:var(--accent)"></i><span class="region-label">Human oversight &amp; safety</span></div>
+      <ul class="checklist">
+        <li><i class="ti ti-circle-check"></i><span><strong>Human oversight controls implemented</strong> — for high-risk AI: human can understand, monitor, intervene, and override all AI decisions</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Kill-switch capability confirmed</strong> — AI operations can be halted immediately (UAE CBUAE, EU AI Act high-risk)</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Bias audit completed and documented</strong> — demographic parity analysis, dataset provenance, annual review cycle set</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Incident response procedures written</strong> — covers serious incident reporting to EU market surveillance, GDPR 72hr breach notification, South Korea reporting</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Post-market monitoring active</strong> — tracking accuracy drift, bias drift, unexpected outputs, security incidents</span></li>
+      </ul>
+    </div>
+
+    <div class="card check-card">
+      <div class="card-head"><i class="ti ti-file-check" style="font-size:17px;color:var(--accent)"></i><span class="region-label">Registration &amp; documentation</span></div>
+      <ul class="checklist">
+        <li><i class="ti ti-circle-check"></i><span><strong>EU AI database registration complete</strong> — high-risk AI systems registered before market placement (Art. 49)</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>China CAC registration submitted</strong> — required before launch of any public-facing GenAI service in China</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Technical documentation package assembled</strong> — system description, training data governance, risk assessment, conformity assessment, test results</span></li>
+        <li><i class="ti ti-circle-check"></i><span><strong>Singapore AI Verify report run</strong> — completed toolkit report on file (regulatory goodwill across APAC)</span></li>
+        <li class="warn"><i class="ti ti-alert-circle"></i><span><strong>Quarterly compliance calendar set</strong> — review against new legislation, update jurisdiction matrix, refresh DPIAs and bias audits</span></li>
+        <li class="warn"><i class="ti ti-alert-circle"></i><span><strong>EU Digital Omnibus monitoring</strong> — proposed amendments to GDPR and AI Act scope/timing being tracked — may alter some obligations</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── RISK MATRIX ──────────────────────────────────────────── -->
+  <div id="panel-risks" class="panel">
+    <div class="section-title">Regulatory risk matrix by deployment scenario</div>
+
+    <div class="card" style="margin-bottom:1.5rem">
+      <div class="table-wrap">
+        <table class="risk-table">
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>EU risk</th>
+              <th>US risk</th>
+              <th>APAC risk</th>
+              <th>Key mitigation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GenAI chatbot (consumer-facing)</td>
+              <td><span class="pill pill-r">High</span></td>
+              <td><span class="pill pill-a">Med</span></td>
+              <td><span class="pill pill-r">High (CN)</span></td>
+              <td>AI disclosure, GPAI docs, CAC registration for China</td>
+            </tr>
+            <tr>
+              <td>AI hiring / CV screening tool</td>
+              <td><span class="pill pill-r">Critical</span></td>
+              <td><span class="pill pill-r">High</span></td>
+              <td><span class="pill pill-r">High (KR)</span></td>
+              <td>Bias audit, human oversight, IL/NYC/Colorado compliance</td>
+            </tr>
+            <tr>
+              <td>AI credit / financial scoring</td>
+              <td><span class="pill pill-r">Critical</span></td>
+              <td><span class="pill pill-r">High</span></td>
+              <td><span class="pill pill-r">High (UAE)</span></td>
+              <td>Explainability, annual bias test, FCRA/ECOA + CBUAE rules</td>
+            </tr>
+            <tr>
+              <td>AI in healthcare / diagnostics</td>
+              <td><span class="pill pill-r">Critical</span></td>
+              <td><span class="pill pill-r">High</span></td>
+              <td><span class="pill pill-r">Critical</span></td>
+              <td>Conformity assessment, HIPAA, 10-yr audit logs, human oversight</td>
+            </tr>
+            <tr>
+              <td>AI recommendation engine (content)</td>
+              <td><span class="pill pill-a">Med</span></td>
+              <td><span class="pill pill-a">Med</span></td>
+              <td><span class="pill pill-r">High (CN)</span></td>
+              <td>ADMT opt-out (CCPA), algo disclosure (China), GDPR Art. 22</td>
+            </tr>
+            <tr>
+              <td>Internal AI productivity tool</td>
+              <td><span class="pill pill-a">Med</span></td>
+              <td><span class="pill pill-a">Low–Med</span></td>
+              <td><span class="pill pill-a">Med</span></td>
+              <td>DPA with provider, employee data processing notice, data residency</td>
+            </tr>
+            <tr>
+              <td>AI-powered API (B2B, no consumer data)</td>
+              <td><span class="pill pill-a">Med</span></td>
+              <td><span class="pill pill-a">Low–Med</span></td>
+              <td><span class="pill pill-a">Low–Med</span></td>
+              <td>GPAI obligations if general-purpose, contractual flow-down to customers</td>
+            </tr>
+            <tr>
+              <td>AI deepfake / synthetic media tool</td>
+              <td><span class="pill pill-r">Critical</span></td>
+              <td><span class="pill pill-a">Med</span></td>
+              <td><span class="pill pill-r">Critical (CN/IN)</span></td>
+              <td>Mandatory labelling everywhere, India deepfakes framework Feb 2026</td>
+            </tr>
+            <tr>
+              <td>AI in critical infrastructure</td>
+              <td><span class="pill pill-r">Critical</span></td>
+              <td><span class="pill pill-r">High</span></td>
+              <td><span class="pill pill-r">Critical</span></td>
+              <td>Annex I conformity, third-party assessment, national security review</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section-title">Top 5 compliance failure modes</div>
+    <div class="grid2">
+      <div class="fail-card">
+        <div class="fail-title"><i class="ti ti-circle-x"></i>Misclassifying risk tier</div>
+        <p>Treating a recruiting or credit tool as "minimal risk" because it doesn't make the final call. The EU AI Act and South Korea AI Basic Act look at whether the AI substantially influences a consequential decision — the human being "in the loop" doesn't automatically lower the risk tier.</p>
+      </div>
+      <div class="fail-card">
+        <div class="fail-title"><i class="ti ti-circle-x"></i>No DPA with AI providers</div>
+        <p>Using LLM APIs with EU client data without a signed DPA and SCCs. This is currently the most common violation — and regulators are actively looking for it following the Meta €1.2B fine precedent.</p>
+      </div>
+      <div class="fail-card">
+        <div class="fail-title"><i class="ti ti-circle-x"></i>Single-region compliance posture</div>
+        <p>Building compliance purely for the EU or US and assuming it covers the rest of the world. South Korea, India, Japan, and China all have distinct requirements that EU GDPR compliance does not satisfy.</p>
+      </div>
+      <div class="fail-card">
+        <div class="fail-title"><i class="ti ti-circle-x"></i>Static compliance documentation</div>
+        <p>Writing a compliance policy at launch and not updating it. Six major AI laws have passed or entered force in the last 18 months. A compliance document written in 2024 is materially out of date on Japan, South Korea, Colorado, and UAE requirements alone.</p>
+      </div>
+      <div class="fail-card">
+        <div class="fail-title"><i class="ti ti-circle-x"></i>Treating compliance as a checkbox</div>
+        <p>Completing a DPIA or bias audit once and filing it. Regulators increasingly expect continuous monitoring: accuracy drift detection, bias re-testing after model updates, incident log reviews, and post-market surveillance reports — not just a signed document from deployment day.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end .page -->
+
+<script>
+  function showTab(name, el) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('panel-' + name).classList.add('active');
+    el.classList.add('active');
+  }
+
+  function filterRegion(region, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#regions-grid .card').forEach(card => {
+      card.style.display = (region === 'all' || card.dataset.region === region) ? '' : 'none';
+    });
+  }
+
+  function toggleAccord(idx) {
+    const body = document.getElementById('body-' + idx);
+    const icon = document.getElementById('icon-' + idx);
+    const isOpen = body.style.display !== 'none';
+    body.style.display = isOpen ? 'none' : 'block';
+    icon.classList.toggle('open', !isOpen);
+  }
+</script>
+</body>
+</html>
