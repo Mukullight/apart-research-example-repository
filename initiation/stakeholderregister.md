@@ -1,43 +1,41 @@
-# Stakeholder Register: AI Safety Fellowship
+# Stakeholder Register: AI Safety Fellowship (Apart Research Model)
 
-**Project:** AI Safety Fellowship  
+**Project:** AI Safety Fellowship (Pilot)  
 **Date:** 2026-06-11  
 **Owner:** Program Lead  
-**Last Updated:** [DD/MM/YYYY]  
 
 ---
 
 ## Stakeholder Identification & Analysis
 
-| ID | Name / Group | Role / Title | Contact | Interest/Influence (H/M/L) | Key Expectations / Needs | Communication Approach | Engagement Strategy |
-|----|--------------|--------------|---------|----------------------------|--------------------------|------------------------|---------------------|
-| 1 | SafeAI Initiative Board | Project Sponsor | board@safeai.org | Interest: H, Influence: H | ROI on mission, risk mitigation, successful pilot | Monthly executive summary, quarterly board presentation | Involve in strategic decisions, seek formal approval on budget |
-| 2 | Program Lead (Jane Doe) | Project Manager | jane@ai-fellowship.org | Interest: H, Influence: H | Clear charter, resources, autonomy | Daily stand-ups with team, weekly update to sponsor | Empower to make operational decisions; provide regular support |
-| 3 | Mentors (12 confirmed) | Senior Researchers | mentors@ai-fellowship.org | Interest: M, Influence: M | Structured engagement, recognition, modest honorarium | Bi-weekly check-ins, dedicated Slack channel | Co-design mentorship guidelines; celebrate contributions publicly |
-| 4 | Pilot Fellows (future) | Primary Beneficiaries | N/A | Interest: H, Influence: L (during design) | Fair selection, quality curriculum, financial support | Transparent application portal, onboarding webinar, monthly feedback surveys | Involve in pilot evaluation; build alumni ambassador program |
-| 5 | Donors / Grantmakers | Funders | donors@safeai.org | Interest: H, Influence: H | Impact metrics, prudent spending, alignment with philanthropic goals | Quarterly impact report, invitation to demo days | Personalized stewardship, early access to research outputs |
-| 6 | Fiscal Sponsor (Legal) | Fiscal Sponsor Org | legal@sponsor.org | Interest: M, Influence: H | Compliance, liability protection, proper fund management | Monthly financial reconciliation, legal updates | Proactive communication; involve in contract and IP discussions |
-| 7 | AI Safety Academic Community | Influencers / Advisors | community@example.org | Interest: M, Influence: M | Academic rigor, avoidance of duplication, talent pipeline | Semi-annual newsletter, conference presentations | Seek informal advice; invite to review research outputs |
-| 8 | Partner Institutions (Universities) | Outreach Channels | partners@university.edu | Interest: L, Influence: M | Brand visibility, student opportunities | Joint webinars, application promo packs | Maintain lightweight partnerships; offer co-branded info sessions |
-| 9 | Operations Team | Support Staff | ops@ai-fellowship.org | Interest: M, Influence: L | Clear processes, efficient tools, manageable workload | Weekly team meeting, shared task board | Foster inclusive culture; provide professional development |
+| ID | Name / Group | Role | Contact | Interest (H/M/L) | Influence (H/M/L) | Key Needs / Expectations | Communication |
+|----|--------------|------|---------|-------------------|-------------------|--------------------------|---------------|
+| 1 | [Sponsor Org Board] | Project Sponsor | sponsor@org.org | H | H | Mission alignment, risk management, successful pilot proof | Monthly executive summary, quarterly board review |
+| 2 | Program Lead (Jane Doe) | Project Manager | jane@aisafety-fellowship.org | H | H | Clear charter, resources, autonomy | Weekly sponsor updates, daily team stand‑ups |
+| 3 | Mentors (8) | Senior researchers | mentors@aisafety-fellowship.org | M | H | Clear expectations, honoraria, recognition | Bi‑weekly mentor sync, dedicated Slack channel |
+| 4 | Pilot Fellows (future) | Program beneficiaries | N/A | H | L (during design) | Fair selection, quality mentorship, flexible schedule | Transparent portal, onboarding session, monthly feedback |
+| 5 | Donors / Funders | Financial supporters | donors@aisafety-fellowship.org | H | H | Impact metrics, efficient use of funds, regular reporting | Quarterly donor reports, invitation to symposium |
+| 6 | Fiscal Sponsor Org | Legal & financial home | legal@sponsor.org | M | H | Compliance, liability protection, proper fund management | Monthly finance reconciliation, contract reviews |
+| 7 | Apart Research (as model) | Advisory / inspiration | hello@apartresearch.com | L | M | Acknowledgment, potential partnership, shared learnings | Informal check‑ins, potential collaboration |
+| 8 | Broader AI Safety Community | Influencers & partners | – | M | M | Quality research output, talent pipeline | Semi‑annual newsletter, research publications |
+| 9 | Partner Universities / Labs | Outreach channels | – | L | L | Visibility, student opportunities | Light‑touch promotion of application cycle |
 
 ---
 
-## Stakeholder Engagement Plan
+## Engagement Strategy Summary
 
-1. **High Power, High Interest (Sponsor, Funders):** Manage closely – regular formal reports and involvement in gate decisions.
-2. **High Power, Low Interest (Fiscal Sponsor):** Keep satisfied – ensure compliance updates are prompt and concerns addressed immediately.
-3. **Low Power, High Interest (Fellows, Mentors):** Keep informed – frequent, transparent communication; act on their feedback to maintain trust.
-4. **Low Power, Low Interest (Academic community, Partners):** Monitor – periodic updates, no intensive management.
+- **High Power, High Interest (Sponsor, Funders):** Manage closely. Regular formal reporting and involvement in key gate decisions.
+- **High Power, Low Interest (Fiscal Sponsor):** Keep satisfied. Proactive compliance updates, quick resolution of concerns.
+- **Low Power, High Interest (Fellows, Mentors):** Keep informed. Frequent, transparent communication; act on feedback to maintain trust and quality.
+- **Low Power, Low Interest (Partners, Apart Research):** Monitor. Light‑touch updates; explore deeper ties only if mutual interest arises.
 
 ---
 
 ## Version History
-
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
-| 1.0 | 2026-06-11 | Program Lead | Initial stakeholder identification |
+| 1.0 | 2026-06-11 | Program Lead | Initial stakeholder mapping based on Apart Research model. |
 
 ---
 
-*This register is a living document; update as new stakeholders emerge or influence/interest shifts.*
+*This register is a living document and will be reviewed monthly.*

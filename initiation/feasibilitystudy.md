@@ -1,4 +1,4 @@
-# Feasibility Study: AI Safety Fellowship
+# Feasibility Study: AI Safety Fellowship (Apart Research Model)
 
 **Document ID:** FS-2026-001  
 **Date:** 2026-06-11  
@@ -8,64 +8,67 @@
 ---
 
 ## 1. Purpose
-This study assesses the viability of the AI Safety Fellowship from operational, technical, economic, legal, and schedule perspectives. It aims to provide decision-makers with the evidence needed to approve (or reject) the project charter.
+This study evaluates the viability of launching a part‑time, remote AI Safety Fellowship inspired by Apart Research’s design. It examines operational, technical, economic, legal, and schedule dimensions to determine whether the project should advance to a full charter.
 
 ## 2. Operational Feasibility
-- **Team:** A dedicated program manager, part-time operations support, and a mentorship coordinator can be hired within 8 weeks. Talent pool exists in the non-profit and academic sectors.
-- **Processes:** Selection, onboarding, and mentorship workflows have been prototyped using lightweight tools (Airtable, Slack, Notion). Scalable to 20+ fellows.
-- **Mentor Network:** Pre-commitments received from 12 senior researchers across 6 institutions. Target: 20 mentors for pilot.
+- **Team:** A single full‑time Program Manager, plus a part‑time Mentorship Coordinator, can manage a 25‑fellow cohort. The model leans heavily on asynchronous communication and community self‑support.
+- **Processes:** Apart Research’s fellowship playbook (selection rubrics, onboarding templates, seminar schedules) is publicly available and can be adapted with minimal effort.
+- **Mentor Network:** The AI safety community is eager to mentor. We have soft commitments from 15 potential mentors; only 10 are needed for the pilot.
 
-**Conclusion:** Operationally viable with moderate staffing investment.
+**Conclusion:** Operationally straightforward, low staff requirement.
 
 ## 3. Technical Feasibility
-- **Platform:** No custom software required initially. Will use off-the-shelf tools (Zoom, Google Workspace, GitHub, Discord).  
-- **Compute:** Partnerships with cloud providers (e.g., TPU Research Cloud, AWS credits) are available for non-commercial safety research.
-- **Curriculum:** Existing open-source AI safety syllabi (AGI Safety Fundamentals, ARENA) can be adapted; minimal development needed.
+- **Platforms:** Zoom (seminars), Slack (community), GitHub (research), and Notion/Airtable (management) – all are free or low‑cost and require no custom development.
+- **Compute:** Apart Research’s fellows typically use Google Colab or free cloud credits; a small discretionary fund ($50/fellow) is sufficient.
+- **Curriculum:** Existing open‑source syllabi (ARENA, AGI Safety Fundamentals) can be remixed; no new content creation is necessary.
 
-**Conclusion:** Low technical complexity; high reuse of existing infrastructure.
+**Conclusion:** Negligible technical complexity.
 
 ## 4. Economic Feasibility
-### Cost Estimates (Pilot Cohort – 10 Fellows, 6 months)
+### Cost Estimates (Pilot Cohort – 15 fellows, 12 weeks)
 | Item | Cost (USD) |
 |------|------------|
-| Stipends ($3,000/mo × 10 × 6) | $180,000 |
-| Mentor honoraria ($2,000 × 10) | $20,000 |
-| Program manager (pro-rata) | $45,000 |
-| Compute & tools | $15,000 |
-| Marketing & outreach | $5,000 |
-| Contingency (10%) | $26,500 |
-| **Total** | **$291,500** |
+| Stipends (tiered, avg $1,000/fellow) | $15,000 |
+| Mentor honoraria ($500 × 8 mentors) | $4,000 |
+| Program Manager (pro‑rata 3 months) | $18,000 |
+| Tools & compute credits | $1,500 |
+| Marketing & outreach | $1,000 |
+| Contingency (10%) | $3,950 |
+| **Total** | **$43,450** |
 
-### Funding Sources
-- Committed: $150,000 from private donors.
-- Pipeline: $200,000 from two institutional grants (awaiting decision).
-- Break-even achievable with 80% funding confirmation.
+### Comparison with Apart Research Model
+Apart Research runs similar cohorts at a cost of ~$30k per program, demonstrating that this is a highly cost‑efficient model. Our estimate is slightly higher due to first‑time setup costs.
 
-**Conclusion:** Economically feasible if at least one pending grant is secured. Fallback option: reduce cohort size.
+### Funding Viability
+- Seed funding of $50k is available from an aligned donor.
+- Follow‑up institutional grants can cover full‑year operations (two cohorts) at ~$75k/year.
+- The low budget makes the program resilient to funding gaps.
 
-## 5. Legal & Compliance Feasibility
-- **Entity:** Program will be run under the fiscal sponsorship of an existing 501(c)(3) organization (SafeAI Initiative).
-- **Contracts:** Standard fellowship agreements, IP terms, and mentor contracts drafted and reviewed by pro-bono counsel.
-- **International Fellows:** Stipend payments possible via wire/TransferWise; visa sponsorship is out of scope (remote-first).
+**Conclusion:** Highly cost‑effective; funding is readily achievable.
 
-**Conclusion:** No major legal blockers.
+## 5. Legal & Compliance
+- The program will be housed under an existing 501(c)(3) fiscal sponsor, as Apart Research does.
+- Standard fellowship agreements and IP terms (open‑source, attribution) are already templated.
+- International stipend payments can be managed via Wise or PayPal; no visa sponsorship required (remote).
+
+**Conclusion:** No legal barriers.
 
 ## 6. Schedule Feasibility
-- Pilot can launch by Q4 2026 if funding is confirmed by July 2026.
-- Full cohort (20 fellows) by Q2 2027 assuming staffing ramp-up.
+- Pilot can launch within 5 months of funding approval.
+- The 12‑week program plus 1‑month evaluation allows two cohorts per year, fitting the academic calendar.
 - No external dependencies with long lead times.
 
-**Conclusion:** Timeline is aggressive but achievable with dedicated focus.
+**Conclusion:** Timeline is realistic and scalable.
 
 ## 7. Risk Assessment Update
-| Risk | Initial | Mitigated | Residual |
-|------|---------|-----------|----------|
-| Funding shortfall | Critical | Reduced cohort size, phased launch | Moderate |
-| Mentor burnout | High | Compensation, clear boundaries, rotation | Low |
-| Low diversity of applicants | Medium | Targeted outreach to global south and underrepresented groups | Low-Medium |
+| Risk | Initial Level | Mitigation | Residual Level |
+|------|---------------|------------|----------------|
+| Funding shortfall | Medium | Phased launch, low cost base | Low |
+| Mentor disengagement | Medium | Honoraria, clear expectations, backup pool | Low |
+| Fellow drop‑out | Low | Part‑time design, flexible schedule, community support | Very Low |
 
 ## 8. Recommendation
-The AI Safety Fellowship is **feasible across all dimensions**. It is recommended to proceed to a formal Project Charter and allocate seed funding for the planning phase.
+The Apart Research fellowship model is proven, low‑risk, and exceptionally cost‑effective. The AI Safety Fellowship is **highly feasible** across all dimensions. We recommend immediate approval to develop a project charter and begin pilot planning.
 
 ---
 

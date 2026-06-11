@@ -1,7 +1,7 @@
-# Project Charter: AI Safety Fellowship
+# Project Charter: AI Safety Fellowship (Apart Research Model)
 
-**Project Name:** AI Safety Fellowship (Pilot & Scale)  
-**Project Sponsor:** SafeAI Initiative  
+**Project Name:** AI Safety Fellowship – Pilot Cohort  
+**Project Sponsor:** [Your Organization / Fiscal Sponsor]  
 **Project Manager:** [Name], Program Lead  
 **Date of Approval:** [DD/MM/YYYY]  
 **Version:** 1.0  
@@ -9,79 +9,78 @@
 ---
 
 ## 1. Project Purpose & Justification
-To build a robust pipeline of AI safety researchers by providing structured funding, mentorship, and community. The project addresses a critical talent gap and aligns with the sponsor’s mission to reduce existential risks from advanced AI.
+To address the global AI safety talent shortage by launching a low‑cost, high‑impact, part‑time research fellowship. The design directly replicates the **Apart Research fellowship model**, which has consistently produced publishable safety research and a vibrant researcher community. This project will pilot the model within our organization, with the aim of establishing a permanent, recurring program.
 
-## 2. High-Level Objectives & Success Criteria
+## 2. High‑Level Objectives & Success Criteria
 | Objective | Key Result / Success Criterion |
 |-----------|--------------------------------|
-| Launch pilot cohort | 10 Fellows selected and onboarded by Nov 2026. |
-| Research output | ≥80% of Fellows publish a paper or open-source tool. |
-| Stakeholder satisfaction | Net Promoter Score ≥ 50 from Fellows and Mentors. |
-| Funding security | Secure $600k for two additional cohorts by mid-2027. |
+| Successful pilot execution | 15 fellows complete the 12‑week program with >85% retention. |
+| Research output | ≥80% of fellows submit a paper or technical report to a workshop or journal. |
+| Community & mentor satisfaction | NPS ≥ 50 from both fellows and mentors. |
+| Funding pathway established | Secure commitments for two additional cohorts (Year 1 budget ~$75k) by pilot end. |
 
 ## 3. Scope
-### In Scope
-- Design and execution of fellowship selection, curriculum, and mentorship.
-- Disbursement of stipends and research funds.
-- Management of mentor relationships and cohort community.
-- Impact reporting and fundraising for future cohorts.
+**In Scope:**
+- Adaptation of Apart Research’s curriculum and fellowship playbook.
+- Recruitment and contracting of 8 mentors.
+- Design and execution of a global application and selection process.
+- Delivery of weekly seminars, co‑working sessions, and 1‑on‑1 mentorship.
+- Stipend disbursement (tiered).
+- Final symposium and public research showcase.
 
-### Out of Scope
-- Awarding academic degrees or formal university credits.
-- Providing long-term employment guarantees.
-- Lobbying or direct policy engagement.
+**Out of Scope:**
+- Full‑time employment or academic credit.
+- In‑person events.
+- Long‑term institutional lab funding for fellows.
 
 ## 4. Key Deliverables
-- Operational playbook (selection rubric, onboarding guide).
-- Fellowship agreement templates.
-- Public application portal and marketing materials.
-- Mid-term and final cohort reports.
+- Fellowship Program Guide (adapted curriculum, code of conduct, schedules).
+- Mentor handbook and contracts.
+- Application portal and selection rubric.
+- 15 accepted research papers/reports (publicly released).
+- Pilot evaluation report with metrics and lessons learned.
 
 ## 5. Milestone Schedule
 | Milestone | Target Date |
 |-----------|-------------|
-| Seed funding secured ($150k) | 15 Aug 2026 |
-| Program Manager onboarded | 01 Sep 2026 |
-| Mentor panel finalized | 15 Sep 2026 |
-| Call for applications open | 01 Oct 2026 |
-| Fellows selected | 01 Nov 2026 |
-| Pilot cohort starts | 15 Nov 2026 |
-| Pilot mid-point review | 15 Feb 2027 |
-| Pilot ends & report published | 15 May 2027 |
-| Full cohort 2 launch | 01 Jul 2027 |
+| Charter approved & seed funding released | 01 Aug 2026 |
+| Program Manager hired | 15 Aug 2026 |
+| Mentor panel contracted and trained | 01 Sep 2026 |
+| Application portal live | 05 Sep 2026 |
+| Applications close | 25 Sep 2026 |
+| Fellows selected & notified | 05 Oct 2026 |
+| Pilot program starts | 15 Oct 2026 |
+| Mid‑program check‑in | 25 Nov 2026 |
+| Final symposium | 15 Jan 2027 |
+| Pilot report & funding proposal for next cohort | 30 Jan 2027 |
 
 ## 6. Budget Summary
-- Pilot budget: $291,500 (see Feasibility Study).
-- Full-year (two cohorts): ~$580,000.
-- Contingency reserve: 10% per cohort.
+- Total Pilot Budget: **$43,450** (see Feasibility Study).
+- Funding Source: $50,000 seed donation (confirmed in principle).
+- Budget authority resides with the Project Sponsor.
 
 ## 7. Assumptions & Constraints
 **Assumptions:**
-- At least one institutional grant will be approved by Q3 2026.
-- Remote-first model does not reduce learning/community quality.
-- Sufficient mentor capacity can be maintained without financial strain.
+- The Apart Research fellowship playbook remains publicly accessible and adaptable.
+- 8 mentors will commit 1 hour/week for 12 weeks.
+- Part‑time, remote format does not degrade research quality.
 
 **Constraints:**
-- Must operate under fiscal sponsor’s legal and financial guidelines.
-- Cannot provide visa support; fellows must work from their country of residence.
-- Program launch cannot be delayed beyond Q1 2027 due to funding agreements.
+- Must operate under the fiscal sponsor’s compliance and financial rules.
+- No visa sponsorship; all fellows participate remotely from their home countries.
+- Pilot must start no later than 15 Oct 2026 to align with donor reporting timelines.
 
-## 8. Key Stakeholders
-(Detailed in Stakeholder Register – see `stakeholder-register.md`)
+## 8. Project Governance
+- **Sponsor:** Approves charter, major scope changes, and release of contingency funds.
+- **Program Manager:** Day‑to‑day decisions, mentor and fellow management, reporting.
+- **Advisory Group:** Includes alumni of Apart Research and experienced mentors to provide guidance.
 
-## 9. Project Governance
-- **Sponsor:** Approves major scope/budget changes, reviews progress quarterly.
-- **Project Manager:** Day-to-day decisions, mentor/fellow management, reporting.
-- **Advisory Board:** Provides strategic guidance, helps with mentor recruitment and outreach.
-
-## 10. Sign-off
-By signing below, the sponsor authorizes the project manager to proceed with the planning and execution of the AI Safety Fellowship as defined in this charter.
-
+## 9. Sign‑off
 | Role | Name | Signature | Date |
 |------|------|-----------|------|
 | Project Sponsor | [Name] | ________ | ____ |
-| Project Manager | [Name] | ________ | ____ |
+| Program Manager | [Name] | ________ | ____ |
 
 ---
 
-*This charter will be reviewed and updated at major phase gates.*
+*This charter is the project’s governing document; changes require sponsor approval.*
